@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>توليد النصوص التعليمية | Hafsa.AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      margin: 0;
+      background-color: #fff0f5;
+      color: #3a3a3a;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      background-color: #f8a8d0;
+      padding: 10px 20px;
+      position: relative;
+    }
+
+    .navbar h1 {
+      margin: 0;
+      color: white;
+      display: inline-block;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+      color: white;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #6a1b4d;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .hero h1 {
+      color: #c2185b;
+      font-size: 2.5rem;
+    }
+
+    .hero p {
+      color: #6a1b4d;
+      font-size: 18px;
+    }
+
+    .tools {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .tool-card {
+      background-color: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .tool-card img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    .tool-card h3 {
+      margin: 10px 0 5px;
+      color: #d81b60;
+    }
+
+    .tool-card p {
+      font-size: 14px;
+    }
+
+    .tool-card a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #c2185b;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .footer {
+  background-color: #f8a8d0;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.6;
+} 
+
+    @media (max-width: 768px) {
+      .hero h1{
+        padding-top: 50px;
+      }
+      .navbar {
+        background-color: #f8a8d0;
+        padding: 10px 20px;
+        position: fixed; 
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 999; /* عشان يطلع فوق كل شيء */
+        }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #f8a8d0;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-icon {
+        display: inline-block;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+      }
+      #particles-js{
+        display: none;
+      }
+    }
+    #particles-js{
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+    
+  </style>
+</head>
+
+<body>
+   <div id="particles-js"></div>
+  <nav class="navbar">
+    <h1>Hafsa.AI</h1>
+    <span class="menu-icon" onclick="toggleMenu()">☰</span>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">الرئيسية</a>
+      <a href="texts.html">توليد النصوص التعليمية</a>
+      <a href="video.html">توليد الفيديو</a>
+      <a href="pp.html">توليد العروض التقديمية</a>
+      <a href="photo.html">توليد الصور</a>
+      <a href="exams.html">توليد الإختبارات</a>
+      <a href="favorites.html">المفضلة</a>
+      <a href="suggestions.html">اقتراحاتكم</a>
+      <a href="about.html">من نحن</a>
+    </div>
+  </nav>
+
+  <div class="hero" style="position: relative; z-index: 1;">
+    <h1> <i class="fas fa-robot"></i>تطبيقات توليد النصوص التعليمية</h1>
+    <p>اكتشفي الأدوات التي تسهّل عليك كتابة المحتوى بكل سهولة!</p>
+  </div>
+
+  <div class="tools">
+    <div class="tool-card">
+      <img src="images/Notion_app_logo.png" alt="Notion AI logo" style="width: 90px; height: 85px;">
+      <h3>Notion AI</h3>
+      <p>مساعد ذكي داخل Notion يساعدك في كتابة وتلخيص وتنظيم أفكارك التعليمية.</p>
+      <a href="https://www.notion.so/product/ai" target="_blank">جربيه من هنا</a>
+    </div>
+    <div class="tool-card">
+      <img src="images/1691829322canva-app-logo-png.png" alt="Canva Magic Write logo" style="width: 90px; height: 85px;" >
+      <h3>Canva Magic Write</h3>
+      <p>خاصية سحرية داخل Canva تساعدك في كتابة نصوص مبدعة وجذابة لتصاميمك التعليمية.</p>
+      <a href="https://www.canva.com/magic-write/" target="_blank">جربيه من هنا</a>
+    </div>
+    <div class="tool-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT logo" style="width: 90px; height: 75px;">
+      <h3>ChatGPT</h3>
+      <p>نموذج قوي يساعدك في صياغة المحتوى، كتابة المقالات، والإجابة على الأسئلة التعليمية.</p>
+      <a href="https://chat.openai.com/" target="_blank">جربيه من هنا</a>
+    </div>
+    <div class="tool-card">
+      <img src="images/kh.png" alt="Khanmigo logo" style="width: 90px; height: 80px;">
+      <h3>Khanmigo</h3>
+      <p>مساعد ذكي من Khan Academy يشرح لك الدروس، يحل معك، ويساعدك تفهم بشكل أعمق.</p>
+      <a href="https://www.khanmigo.ai/" target="_blank">جربيه من هنا</a>
+    </div>
+    <div class="tool-card">
+      <img src="images/qu.png" alt="Quillionz logo"; style="width: 90px; height: 75px; border-radius: 5px;">
+      <h3>Quillionz</h3>
+      <p>توليد أسئلة واختبارات من النصوص التعليمية بسرعة وذكاء. مفيد جدًا للمعلمات.</p>
+      <a href="https://quillionz.com/" target="_blank">جربيه من هنا</a>
+    </div>
+    <div class="tool-card">
+      <img src="images/jasper.png" alt="Jasper AI logo" style="width: 90px; height: 75px;">
+      <h3>Jasper AI</h3>
+      <p>ينشئ محتوى تسويقي وتعليمي بجودة عالية، مثالي للطالبات والمعلمات المحترفات.</p>
+      <a href="https://www.jasper.ai/" target="_blank">جربيه من هنا</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>ابدأ رحلتك في التدريس الذكي، ودع التقنية تعمل معك، لا عنك!</p>
+    <p>&copy; 2025 Hafsa.AI - جميع الحقوق محفوظة</p>
+  </footer>
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById("navLinks");
+      navLinks.classList.toggle("active");
+    }
+
+    tsParticles.load("particles-js", {
+    particles: {
+      number: { value: 80 },
+      size: { value: 3 },
+      color: { value: "#ba68c8" },
+      links: { enable: true, color: "#ce93d8" },
+      move: { enable: true, speed: 2 }
+    },
+    interactivity: {
+      events: { onhover: { enable: true, mode: "repulse" } },
+      modes: { repulse: { distance: 100 } }
+    }
+  });
+  </script>
+</body>
+
+</html>
